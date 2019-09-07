@@ -1,0 +1,34 @@
+package com.example.factor
+
+import org.junit.Assert
+import org.junit.Test
+
+class ExampleUnitTest {
+    @Test
+    fun factorization25() {
+        val num = 45
+        val arr = factor(num)
+        val numbers: ArrayList<Int> = arrayListOf(3, 3, 5)
+        Assert.assertEquals(arr, numbers)
+    }
+
+    @Test
+    fun divisorMultiplication() {
+        val num = 210
+        val arr = factor(num)
+        var sum = 1
+        arr.forEach {
+            sum *= it
+            print(it)
+        }
+        Assert.assertEquals(sum, num)
+    }
+
+    @Test
+    fun factorizationPrimeNumber() {
+        val num = 3
+        val arr = factor(num)
+        Assert.assertEquals(arr.size, 1)
+        Assert.assertEquals(num, arr[0])
+    }
+}
